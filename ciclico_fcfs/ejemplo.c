@@ -162,11 +162,11 @@ int dispatcher(int argc, char *argv[])
 		// el número de elementos en cada uno de los servidores. Se trata de buscar el servidor con 
 		// el menor numero de elementos en la cola.
 
-                if (r = NUM_SERVERS)
+                if (r == NUM_SERVERS)
                 {
           		r = 0;
                 }
-                
+
                 sprintf(mailbox, "s-%d", r);
 
                 MSG_task_send(new_task, mailbox);
