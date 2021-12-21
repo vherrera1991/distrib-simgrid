@@ -9,7 +9,6 @@
 
 #define MFLOPS_BASE     (1000*1000*1000)  // para el cálculo del tiempo de servicio de cada tarea
 
-
 #define NUM_CLIENTS	1
 #define NUM_DISPATCHERS	1
 #define NUM_TASKS	200000		// número de tareas a generar

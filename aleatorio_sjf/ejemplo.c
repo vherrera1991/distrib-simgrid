@@ -9,7 +9,6 @@
 
 #define MFLOPS_BASE     (1000*1000*1000)  // para el cálculo del tiempo de servicio de cada tarea
 
-
 #define NUM_CLIENTS	1
 #define NUM_DISPATCHERS	1
 #define NUM_TASKS	200000		// número de tareas a generar
@@ -45,8 +44,6 @@ struct ClientRequest {
 };
 
 
-// ordena dos elementos de tipo struct ClientRequest
-// utilizado para poder ordenar la colaisutilizando la fucion xbt__dynar_sort
 static int sort_function(const void *e1, const void *e2)
 {
 	struct ClientRequest *c1 = *(void **) e1;
@@ -211,7 +208,7 @@ int server(int argc, char *argv[])
 		// xbt_dynar_sort
 		xbt_dynar_push(client_requests[my_s], (const char *)&req);
 		xbt_dynar_sort(client_requests[my_s], &sort_function);
-		
+
 
 		xbt_cond_signal(cond[my_s]);  // despierta al proceso server
     		xbt_mutex_release(mutex[my_s]);

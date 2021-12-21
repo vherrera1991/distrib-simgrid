@@ -1,3 +1,6 @@
+BIN_FILES  =  ejemplo
+
+#cambiar el PATH
 INSTALL_PATH = $(HOME)/Descargas/SimGrid-3.25
 
 CC = gcc
@@ -12,20 +15,18 @@ LDLIBS = -lm -lsimgrid -rdynamic $(INSTALL_PATH)/lib/libsimgrid.so -Wl,-rpath,$(
 
 
 all: CFLAGS=$(NO_PRAYER_FOR_THE_WICKED)
-all: aleatorio_fcfs aleatorio_sjf
+all: $(BIN_FILES)
 .PHONY : all
 
-aleatorio_fcfs: aleatorio_fcfs.o rand.o
+ejemplo: ejemplo.o rand.o
 	$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
-aleatorio_sjf: aleatorio_sjf.o rand.o
-	$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
 %.o: %.c
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $<
 
 clean:
-	rm -f aleatorio_fcfs aleatorio_sjf *.o
+	rm -f $(BIN_FILES) *.o
 
 .SUFFIXES:
 .PHONY : clean
