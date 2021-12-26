@@ -1,4 +1,4 @@
-BIN_FILES  =  trc_sjf
+BIN_FILES  =  trc_stf
 
 #cambiar el PATH
 INSTALL_PATH = $(HOME)/Descargas/SimGrid-3.25
@@ -18,7 +18,7 @@ all: CFLAGS=$(NO_PRAYER_FOR_THE_WICKED)
 all: $(BIN_FILES)
 .PHONY : all
 
-trc_sjf: trc_sjf.o rand.o
+trc_stf: trc_stf.o rand.o
 	$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
 

@@ -1,4 +1,4 @@
-BIN_FILES  =  aleatorio_sjf
+BIN_FILES  =  aleatorio_stf
 
 #cambiar el PATH
 INSTALL_PATH = $(HOME)/Descargas/SimGrid-3.25
@@ -18,7 +18,7 @@ all: CFLAGS=$(NO_PRAYER_FOR_THE_WICKED)
 all: $(BIN_FILES)
 .PHONY : all
 
-aleatorio_sjf: aleatorio_sjf.o rand.o
+aleatorio_stf: aleatorio_stf.o rand.o
 	$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
 

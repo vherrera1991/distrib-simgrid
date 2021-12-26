@@ -1,4 +1,4 @@
-BIN_FILES  =  ciclico_sjf
+BIN_FILES  =  ciclico_stf
 
 #cambiar el PATH
 INSTALL_PATH = $(HOME)/Descargas/SimGrid-3.25
@@ -18,7 +18,7 @@ all: CFLAGS=$(NO_PRAYER_FOR_THE_WICKED)
 all: $(BIN_FILES)
 .PHONY : all
 
-ciclico_sjf: ciclico_sjf.o rand.o
+ciclico_stf: ciclico_stf.o rand.o
 	$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
 
