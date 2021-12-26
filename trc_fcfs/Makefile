@@ -1,4 +1,4 @@
-BIN_FILES  =  ejemplo
+BIN_FILES  =  trc_fcfs
 
 #cambiar el PATH
 INSTALL_PATH = $(HOME)/Descargas/SimGrid-3.25
@@ -18,7 +18,7 @@ all: CFLAGS=$(NO_PRAYER_FOR_THE_WICKED)
 all: $(BIN_FILES)
 .PHONY : all
 
-ejemplo: ejemplo.o rand.o
+trc_fcfs: trc_fcfs.o rand.o
 	$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
 
